@@ -1,0 +1,19 @@
+{% extends "base.html" %} {% block content %}
+
+<h2>Image Classifier</h2>
+
+		<div class = "booth">
+			<form id="upload-file" method="post" enctype="multipart/form-data">
+			<video id="video" width="400" height="300"></video>
+			<a href="#" id="capture" class="booth-capture-button">Take photo</a>
+			<canvas id="canvas" width="400" height="300"></canvas>
+			<img id="image" src="{{ url_for('static', filename='js/image/dog.jpeg') }}" alt = "Image to be Classified" >
+			<a href="#" id="btn-predict" class="booth-capture-button">Predict!</a>
+		</div>
+		<div class="loader" style="display:none;"></div>
+
+    	<h3 id="result">
+        <span> </span>
+    	</h3>
+
+{% endblock %}
